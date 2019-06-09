@@ -1,0 +1,565 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <link rel="icon" href="${s2001}" type="img/x-ico" />
+		<title>${s101}</title>
+		<meta content="${s1037}" name="Keywords">
+		<meta name="description" content="${s1038}">
+		<link rel="stylesheet" href="../../../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/currency.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../js/layui/css/layui.css"/>
+		<link rel="stylesheet" href="../../../css/index.css" />
+		<link rel="stylesheet" href="../../../dist/css/swiper.min.css">
+		<script type="text/javascript" src="../../../js/jquery1.11.3-jquery.min.js" ></script>
+		<script type="text/javascript" src="../../../js/inheritance.js" ></script>
+		<script type="text/javascript" src="../../../js/layui/layui.js" ></script>
+		<script src="../../../dist/js/swiper.min.js"></script>
+		<style type="text/css">
+			.swiper-slide {
+		        /* Center slide text vertically */
+		        display: -webkit-box;
+		        display: -ms-flexbox;
+		        display: -webkit-flex;
+		        display: flex;
+		        -webkit-box-pack: center;
+		        -ms-flex-pack: center;
+		        -webkit-justify-content: center;
+		        justify-content: center;
+		        -webkit-box-align: center;
+		        -ms-flex-align: center;
+		        -webkit-align-items: center;
+		        align-items: center;
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="nav-content">
+				<img src="${s2002}" class="logoimg"/>
+				<ul class="nav-list">
+					<a href="/main/index.action"><li class="liSelected">首页</li></a>
+					<a href="/main/about.action"><li>关于</li></a>
+					<a href="/case/case.action"><li>案例</li></a>
+					<a href="/main/advantage.action"><li>优势</li></a>
+					<a href="/main/team.action"><li>团队</li></a>
+					<a href="/main/employeePage.action"><li>招聘</li></a>
+					<a href="/main/contactUs.action"><li>联系我们</li></a>
+				</ul>
+			</div>
+		</div>
+		<div class="mian">
+			<div class="jumbotron" style="background: url(${s2003}) no-repeat center ">
+				<h1>${s1001}</h1>
+				<h3>${s1002}</h3>
+			</div>
+			<div class="sort">
+				<div class="ico-box">
+					<img src="${s2004}" />
+					<h3>${s1003}</h3>
+					<span>${s1004}</span>
+				</div>
+				<div class="ico-box">
+					<img src="${s2005}" />
+					<h3>${s1005}</h3>
+					<span>${s1006}</span>
+				</div>
+				<div class="ico-box">
+					<img src="${s2006}" />
+					<h3>${s1007}</h3>
+					<span>${s1008}</span>
+				</div>
+				<div class="ico-box">
+					<img src="${s2007}" />
+					<h3>${s1009}</h3>
+					<span>${s1010}</span>
+				</div>
+				<div class="ico-box">
+					<img src="${s2008}" />
+					<h3>${s1011}</h3>
+					<span>${s1012}</span>
+				</div>
+			</div>
+			<div class="titleBar">
+				<div class="title">
+					<b>项目案例</b>
+					<span>PROJECT</span>
+				</div>
+				<div class="demand">
+					<div class="demand-list fontC">网站建站</div>
+					<div class="demand-list">APP</div>
+					<div class="demand-list">软件开发</div>
+					<div class="demand-list">平面设计</div>
+					<div class="demand-list" style="border: none;">其他</div>
+				</div>
+			</div>
+			<div class="anli swiper-container">
+				<div class="swiper-wrapper anliSwiper">
+				
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<div class="titleBar">
+				<div class="title">
+					<b>专长领域</b>
+					<span>SPECIALTY</span>
+				</div>
+			</div>
+			<div class="expertise">
+				<div class="expertise-list">
+					<div class="img-box">
+						<div class="img-border">
+						</div>
+						<img src="${s2009}" class="img1"/>
+					</div>
+					<div class="des">
+						${s1013}<br />
+						${s1014}
+					</div>
+				</div>
+				<div class="expertise-list">
+					<div class="des">
+						${s1015}<br />
+						${s1016}
+					</div>
+					<div class="img-box">
+						<div class="img-border">
+						</div>
+						<img src="${s2010}" class="img2"/>
+					</div>
+				</div>
+				<div class="expertise-list">
+					<div class="img-box">
+						<div class="img-border">
+						</div>
+						<img src="${s2011}" class="img1"/>
+					</div>
+					<div class="des">
+						${s1017}<br />
+						${s1018}
+					</div>
+				</div>
+				<div class="expertise-list">
+					<div class="des">
+						${s1019}<br />
+						${s1020}
+					</div>
+					<div class="img-box">
+						<div class="img-border">
+						</div>
+						<img src="${s2012}" class="img2"/>
+					</div>
+				</div>
+			</div>
+			<div class="titleBar">
+				<div class="title">
+					<b>项目解决方案</b>
+					<span>PLAN</span>
+				</div>
+			</div>
+			<div class="programme">
+				<div class="fa-box">
+					<img src="${s2013}"  class="fa-img1"/>
+					<div class="fa-des1">
+						<h1>${s1021}</h1>
+						<span>
+							${s1022}<br />
+							${s1023}
+						</span>
+					</div>
+				</div>
+				<div class="fa-box">
+					<div class="fa-box2">
+						<div class="fa-des2">
+							<h1>${s1024}</h1>
+							<span>
+								${s1025}<br />
+								${s1026}
+							</span>
+						</div>
+						<img src="${s2014}"  class="fa-img2"/>
+					</div>
+					<div class="fa-box2">
+						<div class="fa-des3">
+							<h1>${s1027}</h1>
+							<span>
+								${s1028}<br />
+								${s1029}
+							</span>
+						</div>
+						<img src="${s2015}"  class="fa-img3"/>
+					</div>
+				</div>
+			</div>
+			<div class="worth" style="background: url(${s2016}) no-repeat center #000000;">  
+				<h1>${s1030}</h1>
+				<span>
+					${s1031}<br />
+					${s1032}
+				</span>
+			</div>
+			<div class="titleBar">
+				<div class="title">
+					<b>专业团队</b>
+					<span>TEAM</span>
+				</div>
+			</div>
+			<div class="team">
+				<div class="team-left">
+					<img src="" id="imgs"/>
+					<div class="team-text">
+						<h3 id="names"></h3>
+						<h6 style="margin-bottom:25px;" id="station"></h6>
+						<span id="introduction"></span>
+						<div class="next">></div>
+					</div>
+				</div>
+				<div class="team-right"><!-- right-list  rbg -->
+					<a class="spansTop" onclick="spansTop();">↑</a>
+					<a class="spansTops" onclick="spansTops();">↓</a>
+					<div class="teamArea">
+					<div class="teamArea-cont">
+					
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="titleBar">
+				<div class="title">
+					<b>新闻咨询</b>
+					<span>NEWS</span>
+				</div>
+			</div>
+			<div class="news">
+				<div class="news-box">
+				
+				</div>
+				<div class="add">
+					<div class="addbut" onclick="addNews();"></div>
+				</div>
+			</div>
+			<div class="titleBar">
+				<div class="title">
+					<b>合作伙伴</b>
+					<span>partner</span>
+				</div>
+			</div>
+			<div class="partner ">
+				<div class="partner-box">
+				 <c:forEach items='${listPartner }' var="partner">
+				    <div class="partant-list">
+                       <a href="${partner.url }" target="_Blank" rel="nofollow"><img src="${partner.image }"></a>
+                    </div>
+				 </c:forEach>  
+				</div>
+			</div>  
+			<div class="footer" style="background: url(${s2017}) no-repeat center black;">
+				<div class="contactUs">
+					<div class="subtitle">
+						| 联系我们
+					</div>
+					<div class="contact">
+						<img src="${s2018}"/><span><h3>${information.companyName }</h3></span>
+						<p>电话：${information.companyPhone }</p>
+						<p>QQ：${information.qq }</p>
+						<p>邮箱：${information.email }</p>
+						<p>邮编：${information.postcode }</p>
+						<p>上班时间：（9:00--18:00）</p>
+						
+					</div>
+					<div class="offer">
+						<h1>在线申请项目报价</h1>
+						<form action="" method="post" class="layui-form" >
+							<input type="hidden" name="status" value="0">
+							<div class="form-box">
+								<span>项目类型：</span><input type="text"  name="type"  lay-verify="required" placeholder="如app，网站建站，软件开发，平面设计，其他"/>
+							</div>
+							<div class="form-box">
+								<span>项目简介：</span><input type="text"  name="introduction"  lay-verify="required"/>
+							</div>
+							<div class="form-box">
+								<span>联系电话：</span><input type="text"  name="phone" maxlength="11"  lay-verify="required|phone"/>
+							</div>
+							<div class="form-box">
+								<span>姓名：</span><input type="text"  name="name" lay-verify="required"/>
+							</div>
+							<div class="form-box">
+								<span>备注：</span><input type="text"  name="remark"/>
+							</div>
+							<input type="button" value="提交" id="sub" lay-submit lay-filter="add-member-submit" />
+						</form>
+					</div>
+				</div>
+			</div>
+		<jsp:include page="../nav/footer.jsp"></jsp:include>
+		<div class="popupBg">
+			<div class="popup">
+				<img src="../../../img/font/guang.png" />
+				<div class="popup-text">
+					<h1>恭喜您获取报价成功</h1>
+					<p>稍后会有我们的工作人员<br />与您联系</p>
+					<button>好的</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		var page=1;
+		function addNews(){		
+			$.ajax({
+	  			url:"/news/listAll.action",
+	  			data:{'page':page,'limit':3},
+	  			type:"POST",
+	  			dataType:"json",
+	  			async : false, //同步执行
+	  			success:function(result){
+	  				console.log(result.data.list.length);
+	  				if(result.data.list.length<3){
+	  					$(".addbut").css("display","none")
+	  				}
+	  				if(result.data.list.length>=0){	  					
+	  					for(var i=0;i<result.data.list.length;i++){
+	  						var times = formatDateTime(result.data.list[i].time);
+	  						var yesrs = times.substring(0,4);
+	  						var months = times.substring(5,11);
+	  						//$(".news-box").html("")
+		  					$(".news-box").append("<div class='news-list'><h3 onclick=\"window.location.href='/main/newsInfo.action?id="+result.data.list[i].id+"'\">"+result.data.list[i].title+"</h3><div class='time'>"+months+" <span>"+yesrs+"</span></div><span>"+result.data.list[i].content+"</span></div>")
+		  				}
+	  				}
+	  			},
+	  			error: function(result) {
+	              	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+	            }
+	  		}); 
+			page=page+1
+			}
+		
+			$(window).scroll(function(){
+				if($(document).scrollTop() > 630){
+					$('.nav').addClass('navs');
+				}else{
+					$('.nav').removeClass('navs')
+				}
+			})
+			function formatDateTime(time){
+			    var date = new Date(time);
+			    var year = date.getFullYear();
+			    var month = date.getMonth()+1;
+			    var day = date.getDate();
+			    month = month < 10 ? "0"+month:month;
+			    day = day < 10 ? "0"+day:day;
+			    return year+"-"+month+"-"+day;
+			};
+			$('.popup button').click(function(){
+				$('.popupBg').hide();
+				window.location.reload();
+			})
+			$('.next').click(function(){
+				var top=$(".teamArea-cont").position().top-120;
+				if($(".teamArea-cont").outerHeight(true)+top>=360){
+					$(".teamArea-cont").css("top",top);	
+				}
+				else{return false}
+				$('.rbg').next().addClass("rbg");
+				$.ajax({
+		  			url:"/group/getById.action",
+		  			data:{id : $('.rbg').next().children("input").val()},
+		  			type : 'post',
+					dataType : 'json',
+		  			async : false, //同步执行
+		  			success:function(result){
+		  				console.log(result)
+		  				if(result){
+		  					$("#names").text(result.data.name);
+		  					$("#station").text(result.data.station);
+		  					$("#imgs").attr("src",result.data.main_img);
+		  					$("#introduction").text(result.data.introduction);
+		  				}
+		  				$(".rbg")[0].className = "right-list";
+		  			},
+		  			error: function(result) {
+		              	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+		              }
+		  		});
+				
+			})
+			$(function(){
+				 // 添加背景图片
+				 $.ajax({
+			  			url:"/amount/addVisit.action",
+			  			type:"POST",
+			  			dataType:"json",
+			  			async : false, //同步执行
+			  			success:function(result){
+			  			},
+			  			error: function(result) {
+			              	window.wxc.xcConfirm("", window.wxc.xcConfirm.typeEnum.error);
+			              }
+			  		});	
+				
+				/* 新闻 */
+				 $(".addbut").trigger("click");								
+				/* 案例 */
+				$.ajax({
+		  			url:"/case/listCaseByType.action",
+		  			data:{'type':"网站建站"},
+		  			type:"POST",
+		  			dataType:"json",
+		  			async : false, //同步执行
+		  			success:function(result){
+		  				if(result){
+		  					for(var i=0;i<result.data.length;i++){
+			  					$(".anliSwiper").append("<a href='https://www.baidu.com' class='swiper-slide'><div class='anli-list'><img src='"+result.data[i].main_img+"' /><h3>"+result.data[i].name+"</h3><span>"+result.data[i].type+"</span></div></a>")
+			  				}
+		  				}
+		  			},
+		  			error: function(result) {
+		              	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+		              }
+		  		});
+				
+				/* 团队 */
+				$.ajax({
+		  			url:"/group/listByHomePage.action",
+		  			type:"POST",
+		  			dataType:"json",
+		  			async : false, //同步执行
+		  			success:function(result){
+		  				if(result){
+		  					if(result.data.length != 0){
+		  						for(var i=0;i<result.data.length;i++){
+		  							$(".teamArea-cont").append("<div class='right-list'><input type='hidden' value='"+result.data[i].id+"' name='id'><img src='"+result.data[i].group_img+"' /><div class='introduce'><h3>"+result.data[i].name+"</h3><span>"+result.data[i].station+"</span></div></div>")
+			  					}
+			  					$("#names").text(result.data[0].name);
+			  					$("#station").text(result.data[0].station);
+			  					$("#imgs").attr("src",result.data[0].main_img);
+			  					$("#introduction").text(result.data[0].introduction); 
+		  					}
+		  				}
+		  			},
+		  			error: function(result) {
+		              	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+		              }
+		  		});
+				
+				/* 案例*/
+				var $elements = $('.demand-list');
+				var len = $elements.length;
+				$elements.each(function() {
+				    var $this = $(this);
+				    $this.click(function(){
+				    	$this.addClass("fontC");
+				    	$this.siblings(".demand-list").removeClass("fontC");
+				    	var conts = $this[0].textContent;
+				    	$('.swiper-wrapper').empty();
+				    	$.ajax({
+				  			url:"/case/listCaseByType.action",
+				  			data:{'type':conts},
+				  			type:"POST",
+				  			dataType:"json",
+				  			async : false, //同步执行
+				  			success:function(result){
+				  				if(result){
+				  					console.log("langth-------"+result.data.length)
+				  					for(var i=0;i<result.data.length;i++){
+					  					$(".swiper-wrapper").append("<a href='' class='swiper-slide'><div class='anli-list'><img src='"+result.data[i].main_img+"' /><h3>"+result.data[i].name+"</h3><span>"+result.data[i].type+"</span></div></a>")
+					  				}
+				  				}
+				  			},
+				  			error: function(result) {
+				              	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+				              }
+				  		});
+		            })
+				});
+				
+				
+				/* 团队 */
+				var $elementes = $('.right-list');
+				$elementes.each(function() {
+				    var $this = $(this);
+				    $this.mouseover(function(){
+				    	//alert($("#teamArea").scrollTop())
+				    	$(this).addClass("rbg");
+				    	$(this).siblings(".right-list").removeClass("rbg");
+				    	var ids = $this.children("input").val();
+				    	$.ajax({
+				  			url:"/group/getById.action",
+				  			data:{id : ids},
+				  			type : 'post',
+							dataType : 'json',
+				  			async : false, //同步执行
+				  			success:function(result){
+				  				console.log()
+				  				if(result){
+				  					$("#names").text(result.data.name);
+				  					$("#station").text(result.data.station);
+				  					$("#imgs").attr("src",result.data.main_img);
+				  					$("#introduction").text(result.data.introduction);
+				  				}
+				  			},
+				  			error: function(result) {
+				              	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+				              }
+				  		});
+		            })
+				});
+				layui.use([ 'form', 'jquery', 'layer', 'laydate'], function(){
+					var form = layui.form, jquery = layui.jquery;
+					var layer = layui.layer,laydate = layui.laydate;
+				
+					form.on('submit(add-member-submit)',function(data){
+				  		$.ajax({
+							url:"/message/insert.action",
+							data:JSON.stringify(data.field), 
+							contentType:'application/json',
+							type:"POST",
+							dataType:"json",
+							success:function(map){
+			                   if (map.code ==0) {
+			                	   layer.msg("添加留言成功，稍后我们的工作人员会联系您",{icon: 6,time:500,end:function(){
+			                		   $('.popupBg').show();
+			                        }})
+			                   }else{
+			                   	layer.msg(map.msg,{icon:5})
+			                   }                   
+			                },
+				            error: function(result) {
+				            	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+				            }
+						});
+				  	})
+				})
+			})
+			
+			var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+		        slidesPerView: 4,
+		        spaceBetween: 0,
+		        breakpoints: {
+		            
+		        }
+		    });
+			
+			function spansTops(){
+				var top=$(".teamArea-cont").position().top-120;
+				if($(".teamArea-cont").outerHeight(true)+top>=360){
+					$(".teamArea-cont").css("top",top);	
+				}
+				else{return false}
+			}
+			function spansTop(){
+				var top=$(".teamArea-cont").position().top+120;
+				if($(".teamArea-cont").position().top<0){
+					$(".teamArea-cont").css("top",top);	
+				}
+				else{return false}
+			
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqwl.dao.ImgMapper">
+  
+  
+	  <insert id="insertSelective" parameterType="com.yqwl.pojo.Img">
+	    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+	      SELECT LAST_INSERT_ID()
+	    </selectKey>
+	    insert into t_img(
+	           image_number,
+	           name,
+	           img_url,
+	           img_place     
+	    ) values(
+	           #{imageNumber},
+	           #{name},
+	           #{imgUrl},
+	           #{imgPlace}
+	    )
+	  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yqwl.pojo.Img">
+    update t_img
+    <set>
+      <if test="name != null">
+        `name` = #{name},
+      </if>
+      <if test="imgUrl != null">
+        `img_url` = #{imgUrl},
+      </if>
+      <if test="imgPlace != null">
+        `img_place` = #{imgPlace},
+      </if>
+      <if test="imageNumber != null">
+        image_number = #{imageNumber},
+      </if>
+    </set>
+    where `id` = #{id}
+  </update>
+  <!-- 
+  <update id="updateByPrimaryKey" parameterType="com.yqwl.pojo.Img">
+    update `t_img`
+    set `name` = #{name,jdbcType=VARCHAR},
+      `img_url` = #{img_url,jdbcType=VARCHAR},
+      `img_place` = #{img_place,jdbcType=VARCHAR},
+      `time` = #{time,jdbcType=TIMESTAMP}
+    where `id` = #{id,jdbcType=BIGINT}
+  </update> -->
+  <select id="listAll" resultType="com.yqwl.pojo.Img">
+  	select 
+  	     id,
+  	     image_number imageNumber,
+         name,
+         img_url imgUrl,
+         img_place imgPlace
+    from `t_img` limit #{beginPageIndex},#{limit}
+  </select>
+  
+  <select id="listAllImageForMain" resultType="com.yqwl.pojo.Img">
+    select 
+         id,
+         image_number imageNumber,
+         name,
+         img_url imgUrl,
+         img_place imgPlace
+    from `t_img`
+  </select>
+  
+  <select id="listAllCount" resultType="integer">
+	select COUNT(*) from `t_img`
+  </select>
+  
+  <!-- selectByPrimaryKey -->
+  <select id="selectByPrimaryKey" resultType="com.yqwl.pojo.Img">
+    select 
+         id,
+         image_number imageNumber,
+         name,
+         img_url imgUrl,
+         img_place imgPlace
+    from t_img
+    where id = #{id}
+  </select>
+  
+  
+</mapper>

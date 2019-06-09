@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqwl.dao.WelfareMapper">
+	<!-- 公司福利列表 -->
+    <select id="listWelfare" resultType="com.yqwl.pojo.Welfare">
+        SELECT
+			w.id id,
+			w.title title,
+			w.content content,
+			w.state state
+		FROM
+			t_welfare w
+		limit #{beginPageIndex},#{limit}
+    </select>
+	
+	<!-- 公司福利的数据条数 -->
+	<select id="countWelfare" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(w.id) count
+		FROM
+			t_welfare w
+	</select>
+	
+	<!-- 新增公司福利信息 -->
+	<insert id="saveWelfare"  parameterType="com.yqwl.pojo.Welfare">
+		INSERT INTO t_welfare
+		 (
+		 	title,
+			content,
+			state
+		)
+		VALUES
+		(
+			#{title},
+			#{content},
+			#{state}
+		)
+	</insert>
+
+	<!-- 修改公司福利信息 -->
+	<update id="updateWelfare"  parameterType="com.yqwl.pojo.Welfare">
+		UPDATE t_welfare t
+		<set>
+            <if test="title != null and title != ''">
+                t.title = #{title},
+            </if>
+            <if test="content != null and content != ''">
+                t.content = #{content},
+            </if>
+            <if test="state != null">
+                t.state = #{state}
+            </if>
+        </set>	
+		WHERE
+		 	t.id = #{id}	
+	</update>
+  
+  	<!-- 删除公司福利信息（硬删除） -->
+	<delete id="removeWelfare"  parameterType="BigInteger">
+		DELETE from t_welfare 
+		WHERE 
+			id = #{id}
+	</delete>
+	
+	<!-- 修改公司福利信息状态 -->
+	<update id="changeWelfareState"  parameterType="com.yqwl.pojo.Welfare">
+		UPDATE t_welfare t
+		<set>
+            <if test="state != null">
+                t.state = #{state}
+            </if>
+        </set>	
+		WHERE
+		 	t.id = #{id}	
+	</update>
+	
+	<!-- 通过id查询公司福利信息 -->
+    <select id="getWelfareById" parameterType="com.yqwl.pojo.Welfare" resultType="com.yqwl.pojo.Welfare">
+        SELECT
+        	w.id id,
+			w.title title,
+			w.content content,
+			w.state state
+		FROM
+			t_welfare w
+		where
+			w.id = #{id}
+    </select>
+    
+    <!-- 官网显示的公司福利信息(状态为上架的) -->
+    <select id="showListWelfare" resultType="com.yqwl.pojo.Welfare">
+        SELECT
+			w.id id,
+			w.title title,
+			w.content content,
+			w.state state
+		FROM
+			t_welfare w
+		where
+			w.state = 0
+    </select>
+
+</mapper>

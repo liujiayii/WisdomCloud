@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="${s1041}" name="Keywords">
+        <meta name="description" content="${s1042}">
+        <link rel="icon" href="${s2001}" type="img/x-ico" />
+        <title>${s101}</title>
+        <link rel="stylesheet" href="../../../css/style.css" />
+        <link rel="stylesheet" href="../../../css/currency.css" />
+        <link rel="stylesheet" type="text/css" href="../../../css/font.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../js/layui/css/layui.css"/>
+        <script type="text/javascript" src="../../../js/jquery1.11.3-jquery.min.js" ></script>
+        <script type="text/javascript" src="../../../js/layui/layui.js" ></script>
+        <script type="text/javascript" src="../../../js/inheritance.js" ></script>
+        <script type="text/javascript">
+            function formatDateTime(time){
+                var date = new Date(time);
+                var year = date.getFullYear();
+                var month = date.getMonth()+1;
+                var day = date.getDate();
+                month = month < 10 ? "0"+month:month;
+                day = day < 10 ? "0"+day:day;
+                return year+"-"+month+"-"+day;
+            };
+        </script>
+    </head>
+		<div class="navs navas">
+			<div class="nav-content">
+				<img src="${s2002}" class="logoimg"/>
+				<ul class="nav-list">
+					<a href="index.html"><li>首页</li></a>
+		            <a href="about.html"><li>关于</li></a>
+		            <a href="case.html"><li class="liSelected">案例</li></a>
+		            <a href="advantage.html"><li>优势</li></a>
+		            <a href="team.html"><li>团队</li></a>
+		            <a href="employeePage.html"><li>招聘</li></a>
+		            <a href="contactUs.html"><li>联系我们</li></a>
+				</ul>
+			</div>
+		</div>
+		<div class="mian">
+			<div class="case-banner" style="background:url(${s2021}) no-repeat center">
+				
+			</div>
+			<div class="case">
+				<div class="caseArea">
+					
+				</div>
+				<div class="add">
+					<div class="addbut"></div>
+				</div>
+			</div>
+			<div class="footer" style="background: url(${s2017}) no-repeat center black;">
+				<div class="contactUs">
+					<div class="subtitle">
+						| 联系我们
+					</div>
+					<div class="contact">
+                        <img src="${s2018}"/><span><h3>${information.companyName }</h3></span>
+                        <p>电话：${information.companyPhone }</p>
+                        <p>QQ：${information.qq }</p>
+                        <p>邮箱：${information.email }</p>
+                        <p>邮编：${information.postcode }</p>
+                        <p>上班时间：（9:00--18:00）</p>
+                    </div>
+					<div class="offer">
+						<h1>在线申请项目报价</h1>
+						<form action="" method="post" class="layui-form" >
+							<input type="hidden" name="status" value="0">
+							<div class="form-box">
+								<span>项目类型：</span><input type="text"  name="type"  lay-verify="required" placeholder="如app，网站建站，软件开发，平面设计，其他"/>
+							</div>
+							<div class="form-box">
+								<span>项目简介：</span><input type="text"  name="introduction"  lay-verify="required"/>
+							</div>
+							<div class="form-box">
+								<span>联系电话：</span><input type="text"  name="phone" maxlength="11"  lay-verify="required|phone"/>
+							</div>
+							<div class="form-box">
+								<span>姓名：</span><input type="text"  name="name" lay-verify="required"/>
+							</div>
+							<div class="form-box">
+								<span>备注：</span><input type="text"  name="remark"/>
+							</div>
+							<input type="button" value="提交" id="sub" lay-submit lay-filter="add-member-submit" />
+						</form>
+					</div>
+				</div>
+			</div>
+		<style type="text/css">
+        .footer_End{
+            width: 100%;
+            height: 80px;
+            background: #fff;
+            overflow: hidden;
+            line-height: 80px;
+            color:#000;
+        }
+        .footEndFont{
+            width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 0 25px;
+            text-align: center;
+        }
+    </style>
+    <div class="footer_End">
+        <div class="footEndFont">
+            ©&nbsp;&nbsp;2018&nbsp;&nbsp;&nbsp;&nbsp;智莱云&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;rights&nbsp;&nbsp;resered&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${s101}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${information.internetContentProvider}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+</div>
+		<script type="text/javascript">
+		var limit=4;
+		/* 案例+*/
+		$(".addbut").click(function(){			
+			$.ajax({
+	  			url:"/case/listAll.action",
+	  			data:{'page':1,'limit':limit},
+	  			type:"POST",
+	  			dataType:"json",
+	  			async : false, //同步执行
+	  			success:function(result){
+	  				console.log(result.data);
+	  				if(result.data.list.length==result.data.count){
+	  					$(".addbut").css("display","none")
+	  				}
+	  				if(result){
+	  					$(".caseArea").html("")
+	  					for(var i=0;i<result.data.list.length;i++){
+		  					$(".caseArea").append("<a href='https://"+result.data.list[i].url+"' target='_blank' class='caseHref'><div class='case-list'><div class='img-box'><img src='"+result.data.list[i].case_img+"' /><div class='tag'>"+result.data.list[i].type+"</div></div><div class='describe'><p>"+formatDateTime(result.data.list[i].time)+"</p><h3>"+result.data.list[i].name+"</h3><p>"+result.data.list[i].introduction+"<p></div></div></a>")
+		  				}
+	  				}
+	  			},
+	  			error: function(result) {
+	              	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+	              }
+	  		});
+			limit=limit+4
+		})
+			$(function(){
+				/* 案例初始*/
+				$(".addbut").trigger("click");
+				/* 提交留言 */
+				layui.use([ 'form', 'jquery', 'layer', 'laydate'], function(){
+					var form = layui.form, jquery = layui.jquery;
+					var layer = layui.layer,laydate = layui.laydate;
+				
+					form.on('submit(add-member-submit)',function(data){
+				  		$.ajax({
+							url:"/message/insert.action",
+							data:JSON.stringify(data.field), 
+							contentType:'application/json',
+							type:"POST",
+							dataType:"json",
+							success:function(map){
+			                   if (map.code ==0) {
+			                	   layer.msg("添加留言成功，稍后我们的工作人员会联系您",{icon: 6,time:500,end:function(){
+			                		   window.location.href="case.html";
+			                        }})
+			                   }else{
+			                   	layer.msg(map.msg,{icon:5})
+			                   }                   
+			                },
+				            error: function(result) {
+				            	window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+				            }
+						});
+				  	})
+				})
+			})
+		</script>
+	</body>
+</html>

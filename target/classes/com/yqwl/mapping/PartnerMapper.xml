@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqwl.dao.PartnerMapper">
+ <!-- 查询所有合作伙伴信息 -->
+ <select id="listPartner" resultType="com.yqwl.pojo.Partner">
+    SELECT 
+    id,
+    partner_name partnerName,
+    image,
+    url,
+    sort_time sortTime
+    FROM
+    t_partner
+    <if test="beginPageIndex!=null and beginPageIndex !=''">
+    limit #{beginPageIndex},#{limit}
+    </if>
+ </select>
+<!-- 添加合作伙伴信息 -->
+ <insert id="insertPartner" parameterType="com.yqwl.pojo.Partner">
+    INSERT INTO t_partner(
+        partner_name,
+        image,
+        url,
+        sort_time
+    ) values(
+        #{partnerName},
+        #{image},
+        #{url},
+        #{sortTime}
+    )
+ </insert>
+ <!-- 根据id修改合作伙伴信息 -->
+ <update id="updatePartner" parameterType="com.yqwl.pojo.Partner">
+    UPDATE t_partner
+    SET
+    <if test="partnerName != null and partnerName != ''">
+        partner_name=#{partnerName},
+    </if>
+    <if test="image != null and image != ''">
+        image =#{image},
+    </if>
+    <if test="url !=null and url !=''">
+        url=#{url},
+    </if>
+    <if test="sortTime !=null and sortTime !=''">
+        sort_time =#{sortTime}
+    </if>
+    WHERE
+       id=#{id}
+ 
+ </update>
+ <!-- 根据id删除合作伙伴信息 -->
+ <delete id="deletePartner">
+    DELETE FROM t_partner
+    WHERE id=#{id}
+ </delete>
+ <!-- 根据合作伙伴名称或者id获得合作伙伴信息 用来（判重） -->
+ <select id="getPartnerByName" resultType="com.yqwl.pojo.Partner" parameterType="com.yqwl.pojo.Partner">
+    SELECT 
+        id,
+        partner_name partnerName,
+        image,
+        url,
+        sort_time sortTime
+     FROM t_partner
+    WHERE
+        <if test="partnerName != null and partnerName !=''">
+        partner_name =#{partnerName}
+        </if>
+       <if test="id!=null and id!=''">
+        AND id!=#{id}
+       </if>
+ 
+ </select>
+ <select id="getPartnerById" resultType="com.yqwl.pojo.Partner" parameterType="com.yqwl.pojo.Partner">
+    SELECT 
+        id,
+        partner_name partnerName,
+        image,
+        url,
+        sort_time sortTime
+    FROM t_partner
+    WHERE
+  id=#{id}
+     
+ 
+ </select>
+ <!-- 获得所有合作伙伴条数 -->
+ <select id="getAllPartnerCount" resultType="Integer">
+    SELECT COUNT(*) FROM t_partner
+ </select>
+</mapper>

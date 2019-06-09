@@ -1,0 +1,93 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:none; }
+a:active,a:hover {
+	outline: 0
+}
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+.main{
+	width: 100%;
+    height: 100%;
+    min-width: 1600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/back/loginLogo.jpg) no-repeat;
+    background-size: 100%;
+}
+.article_main{
+	width: 1500px;
+    margin: 7% auto;
+    background-color: #fff;
+    box-shadow: 0px 1px 14px -2px #e4e4e4;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 25px;
+}
+.contLeft{
+    float: left;
+    width: 52%;
+}
+.article_main .contRight{
+    box-sizing: border-box;
+    padding: 60px 30px 15px 103px;
+    text-align: center;
+    position: relative;
+    float: left;
+    width: 41%;
+}
+.article_main .contRight .contForm{
+    margin: 60px 10px;
+}
+.article_main .contRight .details{
+	width: 100%;
+	height: 70px;
+	box-sizing: border-box;
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+.subdetails .allInput{
+    background: linear-gradient(to right, #6fb2ff, #0a60ff) !important;
+    border: none !important;
+    color: #fff !important;
+}
+.article_main .contRight .details .allInput{
+	width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #c2c2c2;
+    letter-spacing: 2px;
+    padding-left: 20px;
+    border: 1px solid #e4e4e4;
+}
+.allInput::-webkit-input-placeholder { /* WebKit browsers */
+　　color:#c2c2c2;
+	font-size: 20px;
+　　}
+.article_main .matter .details .submit{
+	font-size: 25px !important;
+	letter-spacing: 25px !important;
+	background: #2e9efa !important;
+	color: #fff !important;
+	cursor: pointer;
+}
+/* 验证码图片 */
+.auth_code{
+	width: 165px;
+    height: 70px;
+    float: left;
+    cursor:pointer;
+}

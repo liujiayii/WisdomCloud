@@ -1,0 +1,475 @@
+/*导航栏样式*/
+.nav{
+	width: 100%;
+	height: 90px;
+	font-size: 16px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	background: transparent;
+}
+.nav-content{
+	width: 1200px;
+	height: 90px;
+	margin: 0 auto;
+}
+.nav-content .logoimg{
+	margin: 18px 14px;
+}
+.nav-list{
+    width: 700px;
+	height: 90px;
+	float: right;
+}
+.nav-list li{
+	float: left;
+	width: 70px;
+	text-align: center;
+	height: 88px;
+	line-height: 90px;
+	margin: 0 15px;
+	cursor: pointer;
+}
+.nav a{
+	color: #fff;
+	font-weight: bold;
+}
+.nav .liSelected{
+	border-bottom: #fff 2px solid;
+}
+.navs{
+	background: #FFFFFF;
+	box-shadow: 0 0 15px rgba(0,0,0,.3);
+}
+.navs a{
+	color: #666;
+}
+.navs .liSelected{
+	border-bottom: #000 2px solid;
+}
+.navas{
+    width: 100%;
+    height: 90px;
+    font-size: 16px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+.fontC{
+	color: #000;
+}
+/*底部样式*/
+.footer{
+	width: 100%;
+	height: 630px;
+	background: url(../img/font/footer.jpg) no-repeat center black;
+	padding-top: 70px;
+	overflow: hidden;
+}
+.contactUs{
+	width: 1200px;
+	height: 485px;
+	margin: 0 auto;
+}
+.subtitle{
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	font-size: 24px;
+	margin: 15px 0;
+}
+.contactUs .contact{
+	width: 450px;
+	height: 405px;
+	padding: 100px 20px;
+	font-size: 14px;
+	line-height: 30px;
+	float: left;	
+	position: relative;
+}
+.contact > img{
+    position: absolute;
+    top: 115px;
+}
+.contact h3{
+    color: #ffcb2c;
+    margin: 25px 0 30px 0;
+    font-size: 23px;
+    padding-left: 67px;
+}
+.contact h3 span{
+	font-size: 16px;
+}
+.contactUs .offer{
+	width: 508px;
+	height: 345px;
+	background: #fff;
+	float: right;
+	padding: 50px 88px;	
+}
+.offer h1{
+	color: #000000;
+	font-size: 18px;
+	375270
+}
+.offer form{
+	width: 375px;
+	height: 270px;
+	margin: 45px auto;
+	text-align: center;
+}
+form .form-box{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	margin-bottom: 25px;
+}
+.form-box span{
+	display: inline-block;
+	text-align: right;
+	width: 75px;
+}
+.form-box input{
+	outline: none;
+	border: none;
+	width: 295px;
+	border-bottom: 1px solid #c1c1c1;
+}
+.offer #sub{
+	width: 135px;
+	height: 35px;
+	line-height: 35px;
+	color: #e98900;
+	font-size: 16px;
+	border: 1px solid #e98900;
+	text-align: center;
+	background: #fff;
+}
+/*添加*/
+.add{
+	width: 100%;
+	height: 40px;
+	margin: 50px 0;
+	clear: both;
+}
+.add .addbut{
+	width: 155px;
+	height: 40px;
+	background: url(../img/font/add.png) no-repeat center center #3e3e3e;
+	margin: 0 auto;
+	cursor: pointer;
+}
+/*我们的价值*/
+.worth{
+	width: 100%;
+	height: 245px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	font-size: 16px;
+	background: url(../img/font/worth.jpg) no-repeat center #000000 ;
+	padding-top:135px;
+}
+.worth h1{
+	font-size: 24px;
+	margin-bottom:30px;
+}
+/*地图底部*/
+.address-footer{
+	width: 100%;
+	height: 175px;
+	line-height: 175px;
+	color: #FFFFFF;
+	font-size: 20px;
+	text-align: center;
+	background: #2d343a;
+}
+.address-footer img{
+	vertical-align:middle;
+	margin-left: 80px;
+	margin-right: 15px;
+}
+/*项目报价成功弹窗*/
+.popupBg,.popupBgs{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.4);
+	z-index: 9999;
+	display: none;
+}
+.popupBg .popup{
+	width: 480px;
+	height: 720px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -240px;
+	margin-top: -360px;
+}
+.popupBgs .popups{
+	width: 50%;
+	height: 720px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+    box-sizing: border-box;
+    background: #fff
+}
+.popup img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin: 0 auto;
+	z-index: 1;
+}
+.popup-text{
+	width: 100%;
+	height: 320px;
+	background: #FFFFFF;
+	text-align: center;
+	position: relative;
+	top: 211px;
+	padding-top: 190px;
+	border-radius:12px ;
+}
+.popup-text h1{
+	font-size: 38px;
+	color: #08c4fd;
+}
+.popup-text p{
+	font-size: 25px;
+	margin-top: 45px;
+}
+.popup-text button{
+	width: 400px;
+	height: 85px;
+	background: #1bc4fe;
+	color: #FFFFFF;
+	font-size: 32px;
+	border-radius: 42px;
+	margin-top: 50px;
+	outline: none;
+	border: none;
+}
+/* 招聘 */
+.recruitsBox{
+	text-align: center;
+    background: #dcdcdc;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.recruitsBox h1{
+	font-size: 48px;
+}
+.recruitsBox h3{
+	font-size: 24px;
+    color: #000000;
+}
+.recruitsTable{
+	width: 1200px;
+	height: auto;
+	margin: 50px auto;
+}
+.recruitSearch{
+	text-align: right;
+    width: 100%;
+    height: 38px;
+}
+.recruitSearch form{
+    width: 25%;
+    float: right;
+}
+.layui-btnA{
+    display: inline-block;
+    padding: 0 5px;
+    background: #ec9051;
+    color: #fff;
+    line-height: 30px;
+    border-radius: 3px;
+}
+.tabAreas{
+	width: 100%;
+    box-sizing: border-box;
+}
+.tabAreas > h2{
+    text-align: center;
+    height: 60px;
+    background: #f5f5f5;
+    line-height: 60px;
+    font-size: 19px;
+    font-weight: 600;
+}
+.shows{
+	display: block !important; 
+}
+.titles{
+	background: #fff !important;
+	color: #ff7513 !important;
+}
+.tabAreas h2 .spans{
+	display: inline-block;
+    padding: 0 30px;
+    height: 100%;
+    color: #000000;
+    cursor: pointer;
+}
+.tabAreas .divs{
+    width: 100%;
+    display:none;
+    background: url(../img/font/recruitsBg.png) no-repeat center center #000000;
+    height: 450px;
+    background-size: 100% 100%;
+}
+.tabAreas .divs .ContDivs{
+	position: absolute;
+    width: 55%;
+    box-sizing: border-box;
+    padding: 25px 60px;
+    /* margin: 20px; */
+    /* margin: 20px auto; */
+    margin: 110px 425px;
+    background: #fff;
+    text-align: center;
+}
+.tabAreas .divs .ContDivs h2{
+    color: #000000;
+    font-size: 30px;
+}
+.tabAreas .divs .ContDivs>p{
+    font-size: 26px;
+    padding: 5px 0;
+}
+.tabAreas .divs .ContDivs .indexT{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    line-height: 30px;	
+    font-size: 14px !important;
+    color: #1b1717;
+}
+.tabAreas .divs .ContDivs .indexT p span{
+	font-weight: bold;
+}
+.recruitSwiper{
+    width: 1202px;
+    margin: 10px auto;
+    text-align: center;
+    padding: 30px 10px;
+    box-sizing: border-box;
+}
+.recruitSwiper h2{
+	font-size: 48px;
+}
+.recruitSwiper p{
+	font-size: 24px;
+    color: #000000;
+}
+.recruitSwiper .swipDoms{
+    width: 1200px;
+    margin: 25px 0;
+    height: 400px;
+}
+.searchs{
+    width: 60px;
+    height: 37px;
+    display: inline-block;
+    border: none;
+    color: #ffffff;
+    background: #ff8a65;
+}
+.inputsP{
+	width: 80% !important;
+    float: left !important;
+}
+.ulTopArea{
+	
+}
+.ulTopArea ul{
+	overflow: hidden;
+	background: #868686;
+    height: 50px;
+    line-height: 50px;
+}
+.ulTopArea ul li{
+	float: left;
+    width: 20%;
+    color: #ffffff;
+    font-size: 18px;
+}
+.ulsConts{
+	margin: 15px 0;
+}
+.liTopArea{
+	overflow: hidden;
+}
+
+.liTopArea ul{
+	overflow: hidden;
+	height: 60px;
+	line-height: 60px;
+	width: 100%;
+	float: left;
+	background: #fff;
+    border-bottom: 1px dashed;
+}
+.liTopArea ul li{
+	width: 20%;
+	float: left;
+}
+.liTopArea .olAreas{
+    float: left;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding: 10px 20px 60px 10px;
+    display: none;
+    background: #f5f5f5;
+}
+.BgColor{
+	background: #ccc !important;
+}
+.BgShow{
+	display: block !important;
+}
+.liTopArea .olAreas li{
+	line-height: 30px;
+	color: #313131;
+    padding-left: 70px;
+}
+.liTopArea .olAreas li button{
+    float: right;
+    margin-right: 20px;
+    /* height: 32px; */
+    padding: 10px;
+    border: none;
+    background: #ff7300;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+}
+/* 落款 */
+.footer_End{
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    overflow: hidden;
+    line-height: 80px;
+    color:#000;
+}
+.footEndFont{
+	width: 1200px;
+	margin: 0 auto;
+   	box-sizing: border-box;
+    padding: 0 25px;
+    text-align: center;
+}
