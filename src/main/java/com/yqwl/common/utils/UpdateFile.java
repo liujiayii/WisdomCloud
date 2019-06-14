@@ -25,17 +25,17 @@ import com.aliyun.oss.model.SetBucketLifecycleRequest;
  */
 public class UpdateFile {
 
-	/*private static final String endpoint = "http://oss-cn-beijing.aliyuncs.com";
+	private static final String endpoint = "http://oss-cn-beijing.aliyuncs.com";
 	private static final String accessKeyId = "LTAIvnDBZYK3DLbL";
 	private static final String accessKeySecret = "MI2LRjW5RQqolPzUBdkjSaRDDPOLpG";
 	private static final String bucketName = "system-im";
 	private static final String picLocation = "data/cloudImg/";
 	private static  String Key = "key";
 	private static final String ruleId0 = "rule0";
-	private static final String matchPrefix0 = "A0/";*/
+	private static final String matchPrefix0 = "A0/";
     
     /** 测试环境 */
-    private static final String endpoint = "http://oss-cn-zhangjiakou.aliyuncs.com";
+   /* private static final String endpoint = "http://oss-cn-zhangjiakou.aliyuncs.com";
     private static final String accessKeyId = "LTAILXMrV4PXgX4z";
     private static final String accessKeySecret = "h38zzq6DgpukdxmyTWsrWwaRaTp9v9";
     private static final String bucketName = "ouyepuhui";
@@ -43,7 +43,7 @@ public class UpdateFile {
     private static  String Key = "key";
     private static final String ruleId0 = "rule0";
     private static final String matchPrefix0 = "A0/";
-
+    */
 	public UpdateFile() {
 		super();
 	}

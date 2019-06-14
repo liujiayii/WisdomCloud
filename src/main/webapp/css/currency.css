@@ -18,7 +18,6 @@
 	margin: 18px 14px;
 }
 .nav-list{
-    width: 700px;
 	height: 90px;
 	float: right;
 }
@@ -56,6 +55,7 @@
     left: 0;
     top: 0;
     z-index: 999;
+	background: #fff;
 }
 .fontC{
 	color: #000;
@@ -87,7 +87,7 @@
 	padding: 100px 20px;
 	font-size: 14px;
 	line-height: 30px;
-	float: left;	
+	float: left;
 	position: relative;
 }
 .contact > img{
@@ -108,12 +108,11 @@
 	height: 345px;
 	background: #fff;
 	float: right;
-	padding: 50px 88px;	
+	padding: 50px 88px;
 }
 .offer h1{
 	color: #000000;
 	font-size: 18px;
-	375270
 }
 .offer form{
 	width: 375px;
@@ -308,7 +307,7 @@ form .form-box{
     font-weight: 600;
 }
 .shows{
-	display: block !important; 
+	display: block !important;
 }
 .titles{
 	background: #fff !important;
@@ -352,7 +351,7 @@ form .form-box{
     box-sizing: border-box;
     padding: 10px;
     border-top: 1px solid #ccc;
-    line-height: 30px;	
+    line-height: 30px;
     font-size: 14px !important;
     color: #1b1717;
 }
@@ -391,7 +390,7 @@ form .form-box{
     float: left !important;
 }
 .ulTopArea{
-	
+
 }
 .ulTopArea ul{
 	overflow: hidden;

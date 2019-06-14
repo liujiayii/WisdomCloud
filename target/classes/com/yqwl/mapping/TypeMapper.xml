@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqwl.dao.TypeMapper">
+	<!-- (后台)分页查询所有的类型 -->
+    <select id="listType" resultType="com.yqwl.pojo.Type">
+        SELECT
+			t.id id,
+			t.type_name typeName,
+			t.remark remark
+		FROM
+			t_type t
+		limit #{beginPageIndex},#{limit}
+    </select>
+	
+	<!-- 所有类型的数量 -->
+	<select id="countType" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(t.id) count
+		FROM
+			t_type t
+	</select>
+	
+	<!-- (后台)增加一条类型 -->
+	<insert id="saveType"  parameterType="com.yqwl.pojo.Type">
+		INSERT INTO t_type
+		 (
+		 	type_name,
+			remark
+		)
+		VALUES
+		(
+			#{typeName},
+			#{remark}
+		)
+	</insert>
+  
+  	<!-- (后台)删除一条类型 -->
+	<delete id="removeType"  parameterType="BigInteger">
+		DELETE from t_type
+		WHERE 
+			id = #{id}
+	</delete>
+	
+	<!-- (后台)通过id查询对应的类型 -->
+    <select id="getTypeById" parameterType="com.yqwl.pojo.Type" resultType="com.yqwl.pojo.Type">
+        SELECT
+			t.id id,
+			t.type_name typeName,
+			t.remark remark
+		FROM
+			t_type t
+		where
+			t.id = #{id}
+    </select>
+    
+    <!-- (前台)显示所有的类型 -->
+    <select id="showAllType" resultType="com.yqwl.pojo.Type">
+        SELECT
+			t.id id,
+			t.type_name typeName,
+			t.remark remark
+		FROM
+			t_type t
+    </select>
+
+</mapper>

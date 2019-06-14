@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqwl.dao.ModelMapper">
+	<!-- (后台)分页查询所有的模版 -->
+    <select id="listModel" resultType="com.yqwl.vo.ModelAndBannerVo">
+        SELECT
+			m.id id,
+			m.model_num modelNum,
+			m.model_name modelName,
+			m.model_price modelPrice,
+			m.color_id colorId,
+			c.color_name colorName,
+			m.trade_id tradeId,
+			t.trade_name tradeName,
+			m.type_id typeId,
+			y.type_name typeName,
+			m.version version,
+			m.image image,
+			m.state state
+		FROM
+			t_model m,
+			t_color c,
+			t_trade t,
+			t_type y
+		WHERE
+			m.color_id = c.id
+		AND	
+			m.trade_id = t.id
+		AND
+			m.type_id = y.id
+		order by m.state ,m.id DESC
+		limit #{beginPageIndex},#{limit}
+    </select>
+	
+	<!-- 所有模版的数量 -->
+	<select id="countModel" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(m.id) count
+		FROM
+			t_model m,
+			t_color c,
+			t_trade t,
+			t_type y
+		WHERE
+			m.color_id = c.id
+		AND	
+			m.trade_id = t.id
+		AND
+			m.type_id = y.id
+	</select>
+	
+	<!-- (后台)增加一条模版 -->
+	<insert id="saveModel"  parameterType="com.yqwl.vo.ModelAndBannerVo">
+		INSERT INTO t_model
+		 (
+		 	model_num,
+			model_name,
+			model_price,
+			color_id,
+			trade_id,
+			type_id,
+			version,
+			image,
+			state
+		)
+		VALUES
+		(
+			#{modelNum},
+			#{modelName},
+			#{modelPrice},
+			#{colorId},
+			#{tradeId},
+			#{typeId},
+			#{version},
+			#{image},
+			#{state}
+		)
+	</insert>
+	
+	<!-- 修改模版信息时查重使用 -->
+    <select id="listModelForUpdate" resultType="com.yqwl.vo.ModelAndBannerVo">
+        SELECT
+			m.id id,
+			m.model_num modelNum,
+			m.model_name modelName,
+			m.model_price modelPrice,
+			m.color_id colorId,
+			c.color_name colorName,
+			m.trade_id tradeId,
+			t.trade_name tradeName,
+			m.type_id typeId,
+			y.type_name typeName,
+			m.version version,
+			m.image image,
+			m.state state
+		FROM
+			t_model m,
+			t_color c,
+			t_trade t,
+			t_type y
+		WHERE
+			m.color_id = c.id
+		AND	
+			m.trade_id = t.id
+		AND
+			m.type_id = y.id
+		AND
+			m.id != #{id}
+    </select>
+	
+	<!-- (后台)修改一条模版 -->
+	<update id="updateModel"  parameterType="com.yqwl.vo.ModelAndBannerVo">
+		UPDATE t_model t
+		<set>
+            <if test="modelName != null and modelName != ''">
+                t.model_name = #{modelName},
+            </if>
+            <if test="modelPrice != null and modelPrice != ''">
+                t.model_price = #{modelPrice},
+            </if>
+            <if test="colorId != null">
+                t.color_id = #{colorId},
+            </if>
+            <if test="tradeId != null">
+                t.trade_id = #{tradeId},
+            </if>
+            <if test="typeId != null">
+                t.type_id = #{typeId},
+            </if>
+            <if test="version != null and version != ''">
+                t.version = #{version},
+            </if>
+            <if test="image != null and image != ''">
+                t.image = #{image},
+            </if>
+            <if test="state != null">
+                t.state = #{state}
+            </if>
+        </set>	
+		WHERE
+		 	t.id = #{id}	
+	</update>
+  
+  	<!-- (后台)删除一条模版（上下架） -->
+	<update id="removeModel"  parameterType="com.yqwl.vo.ModelAndBannerVo">
+		UPDATE t_model t
+		<set>
+            <if test="state != null">
+                t.state = #{state}
+            </if>
+        </set>	
+		WHERE
+		 	t.id = #{id}	
+	</update>
+	
+	<!-- (后台)通过id查询对应的行业 -->
+    <select id="getModelById" parameterType="com.yqwl.vo.ModelAndBannerVo" resultType="com.yqwl.vo.ModelAndBannerVo">
+        SELECT
+        	m.id id,
+			m.model_num modelNum,
+			m.model_name modelName,
+			m.model_price modelPrice,
+			m.color_id colorId,
+			c.color_name colorName,
+			m.trade_id tradeId,
+			t.trade_name tradeName,
+			m.type_id typeId,
+			y.type_name typeName,
+			m.version version,
+			m.image image,
+			m.state state
+		FROM
+			t_model m,
+			t_color c,
+			t_trade t,
+			t_type y
+		WHERE
+			m.color_id = c.id
+		AND	
+			m.trade_id = t.id
+		AND
+			m.type_id = y.id
+		AND
+			m.id = #{id}
+    </select>
+    
+    <!-- 根据筛选条件查询对应的模版 -->
+    <select id="listModelByOption" parameterType="com.yqwl.vo.ModelAndBannerVo" resultType="com.yqwl.vo.ModelAndBannerVo">
+        SELECT
+			m.id id,
+			m.model_num modelNum,
+			m.model_name modelName,
+			m.model_price modelPrice,
+			m.color_id colorId,
+			c.color_name colorName,
+			m.trade_id tradeId,
+			t.trade_name tradeName,
+			m.type_id typeId,
+			y.type_name typeName,
+			m.version version,
+			m.image image,
+			m.state state
+		FROM
+			t_model m,
+			t_color c,
+			t_trade t,
+			t_type y	
+		<where>
+              m.color_id = c.id
+			AND	
+			  m.trade_id = t.id
+			AND
+			  m.type_id = y.id
+			<if test="state != null">
+                and m.state = #{state} 
+            </if>
+			<if test="modelName != null and modelName !=''">
+                and m.model_name LIKE "%"#{modelName}"%" 
+            </if>
+            <if test="modelNum != null and modelNum !=''">
+                and m.model_num like CONCAT('%', #{modelNum}, '%')
+            </if>
+            <if test="colorId != null">
+                and m.color_id = #{colorId}
+            </if>
+            <if test="tradeId != null">
+                and m.trade_id = #{tradeId}
+            </if>
+            <if test="typeId != null">
+                and m.type_id = #{typeId}
+            </if>
+            <if test="modelLowPrice != null and modelHighPrice != null">
+                and m.model_price BETWEEN #{modelLowPrice} AND #{modelHighPrice}
+            </if>
+        </where>
+		ORDER BY
+			m.state,m.model_price
+		limit #{page},#{limit}
+    </select>
+    
+    <!-- 根据筛选条件查询对应的模版的数量 -->
+    <select id="countModelByOption" parameterType="com.yqwl.vo.ModelAndBannerVo" resultType="java.lang.Integer">
+        SELECT
+			COUNT(m.id) count
+		FROM
+			t_model m,
+			t_color c,
+			t_trade t,
+			t_type y	
+		<where>
+              m.color_id = c.id
+			AND	
+			  m.trade_id = t.id
+			AND
+			  m.type_id = y.id
+			<if test="state != null">
+                and m.state = #{state} 
+            </if>
+			<if test="modelName != null and modelName !=''">
+                and m.model_name LIKE "%"#{modelName}"%" 
+            </if>
+            <if test="modelNum != null and modelNum !=''">
+                and m.model_num like CONCAT('%', #{modelNum}, '%')
+            </if>
+            <if test="colorId != null">
+                and m.color_id = #{colorId}
+            </if>
+            <if test="tradeId != null">
+                and m.trade_id = #{tradeId}
+            </if>
+            <if test="typeId != null">
+                and m.type_id = #{typeId}
+            </if>
+            <if test="modelLowPrice != null and modelHighPrice != null">
+                and m.model_price BETWEEN #{modelLowPrice} AND #{modelHighPrice}
+            </if>
+        </where>
+    </select>
+    
+    <!-- (前台)显示所有的模版（无分页） -->
+    <select id="showAllModel" resultType="com.yqwl.vo.ModelAndBannerVo">
+        SELECT
+			m.id id,
+			m.model_num modelNum,
+			m.model_name modelName,
+			m.model_price modelPrice,
+			m.color_id colorId,
+			c.color_name colorName,
+			m.trade_id tradeId,
+			t.trade_name tradeName,
+			m.type_id typeId,
+			y.type_name typeName,
+			m.version version,
+			m.image image,
+			m.state state
+		FROM
+			t_model m,
+			t_color c,
+			t_trade t,
+			t_type y
+		WHERE
+			m.color_id = c.id
+		AND	
+			m.trade_id = t.id
+		AND
+			m.type_id = y.id
+    </select>
+
+</mapper>

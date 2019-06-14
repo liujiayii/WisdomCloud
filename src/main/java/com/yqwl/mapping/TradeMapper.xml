@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqwl.dao.TradeMapper">
+	<!-- (后台)分页查询所有的行业 -->
+    <select id="listTrade" resultType="com.yqwl.pojo.Trade">
+        SELECT
+			t.id id,
+			t.trade_name tradeName,
+			t.remark remark
+		FROM
+			t_trade t
+		limit #{beginPageIndex},#{limit}
+    </select>
+	
+	<!-- 所有行业的数量 -->
+	<select id="countTrade" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(t.id) count
+		FROM
+			t_trade t
+	</select>
+	
+	<!-- (后台)增加一条行业 -->
+	<insert id="saveTrade"  parameterType="com.yqwl.pojo.Trade">
+		INSERT INTO t_trade
+		 (
+		 	trade_name,
+			remark
+		)
+		VALUES
+		(
+			#{tradeName},
+			#{remark}
+		)
+	</insert>
+  
+  	<!-- (后台)删除一条行业 -->
+	<delete id="removeTrade"  parameterType="BigInteger">
+		DELETE from t_trade
+		WHERE 
+			id = #{id}
+	</delete>
+	
+	<!-- (后台)通过id查询对应的行业 -->
+    <select id="getTradeById" parameterType="com.yqwl.pojo.Trade" resultType="com.yqwl.pojo.Trade">
+        SELECT
+			t.id id,
+			t.trade_name tradeName,
+			t.remark remark
+		FROM
+			t_trade t
+		where
+			t.id = #{id}
+    </select>
+    
+    <!-- (前台)显示所有的行业 -->
+    <select id="showAllTrade" resultType="com.yqwl.pojo.Trade">
+        SELECT
+			t.id id,
+			t.trade_name tradeName,
+			t.remark remark
+		FROM
+			t_trade t
+    </select>
+
+</mapper>

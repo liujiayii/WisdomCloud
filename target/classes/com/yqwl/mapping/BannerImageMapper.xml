@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqwl.dao.BannerImageMapper">
+	<!-- (后台)分页查询所有的轮播图 -->
+    <select id="listBannerImage" resultType="com.yqwl.pojo.BannerImage">
+        SELECT
+			t.id id,
+			t.model_id modelId,
+			t.images images,
+			t.priority priority
+		FROM
+			t_banner_image t
+		limit #{beginPageIndex},#{limit}
+    </select>
+	
+	<!-- 所有轮播图的数量 -->
+	<select id="countBannerImage" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(t.id) count
+		FROM
+			t_banner_image t
+	</select>
+	
+	<!-- (后台)增加一条轮播图 -->
+	<insert id="saveBannerImage"  parameterType="com.yqwl.pojo.BannerImage">
+		INSERT INTO t_banner_image
+		 (
+		 	model_id,
+			images,
+			priority
+		)
+		VALUES
+		(
+			#{modelId},
+			#{images},
+			#{priority}
+		)
+	</insert>
+  
+  	<!-- (后台)删除一条轮播图 -->
+	<delete id="removeBannerImage"  parameterType="BigInteger">
+		DELETE from t_banner_image
+		WHERE 
+			id = #{id}
+	</delete>
+	
+	<!-- (后台)修改一条轮播图 -->
+	<update id="updateBannerImage"  parameterType="com.yqwl.pojo.BannerImage">
+		UPDATE t_banner_image t
+		<set>
+            <if test="images != null and images != ''">
+                t.images = #{images},
+            </if>
+            <if test="priority != null and priority != ''">
+                t.priority = #{priority}
+            </if>
+        </set>	
+		WHERE
+		 	t.id = #{id}	
+	</update>
+	
+	<!-- (后台)通过id查询对应的轮播图 -->
+    <select id="getBannerImageById" parameterType="com.yqwl.pojo.BannerImage" resultType="com.yqwl.pojo.BannerImage">
+        SELECT
+			t.id id,
+			t.model_id modelId,
+			t.images images,
+			t.priority priority
+		FROM
+			t_banner_image t
+		where
+			t.id = #{id}
+    </select>
+    
+    <!-- (前台)显示所有的轮播图 -->
+    <select id="showAllBannerImage" resultType="com.yqwl.pojo.BannerImage">
+        SELECT
+			t.id id,
+			t.model_id modelId,
+			t.images images,
+			t.priority priority
+		FROM
+			t_banner_image t
+    </select>
+    
+    <!-- 根据模版id查询对应的轮播图片 -->
+    <select id="listBannerImageByModelId" resultType="com.yqwl.pojo.BannerImage">
+        SELECT
+			t.id id,
+			t.model_id modelId,
+			t.images images,
+			t.priority priority
+		FROM
+			t_banner_image t
+		WHERE
+			t.model_id = #{modelId}
+		order by
+			t.priority
+    </select>
+
+</mapper>

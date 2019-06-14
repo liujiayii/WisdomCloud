@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yqwl.dao.ColorMapper">
+	<!-- (后台)分页查询所有的色系 -->
+    <select id="listColor" resultType="com.yqwl.pojo.Color">
+        SELECT
+			c.id id,
+			c.color_name colorName,
+			c.remark remark
+		FROM
+			t_color c
+		limit #{beginPageIndex},#{limit}
+    </select>
+	
+	<!-- 所有色系的数量 -->
+	<select id="countColor" resultType="java.lang.Integer">
+		SELECT 
+			COUNT(c.id) count
+		FROM
+			t_color c
+	</select>
+	
+	<!-- (后台)增加一条色系 -->
+	<insert id="saveColor"  parameterType="com.yqwl.pojo.Color">
+		INSERT INTO t_color
+		 (
+		 	color_name,
+			remark
+		)
+		VALUES
+		(
+			#{colorName},
+			#{remark}
+		)
+	</insert>
+  
+  	<!-- (后台)删除一条色系 -->
+	<delete id="removeColor"  parameterType="BigInteger">
+		DELETE from t_color 
+		WHERE 
+			id = #{id}
+	</delete>
+	
+	<!-- (后台)通过id查询对应的色系 -->
+    <select id="getColorById" parameterType="com.yqwl.pojo.Color" resultType="com.yqwl.pojo.Color">
+        SELECT
+			c.id id,
+			c.color_name colorName,
+			c.remark remark
+		FROM
+			t_color c
+		where
+			c.id = #{id}
+    </select>
+    
+    <!-- (前台)显示所有的色系 -->
+    <select id="showAllColor" resultType="com.yqwl.pojo.Color">
+        SELECT
+			c.id id,
+			c.color_name colorName,
+			c.remark remark
+		FROM
+			t_color c
+    </select>
+
+</mapper>

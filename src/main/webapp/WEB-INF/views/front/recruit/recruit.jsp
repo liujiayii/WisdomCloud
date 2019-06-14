@@ -45,6 +45,7 @@
 					<a href="/main/index.action"><li>首页</li></a>
 					<a href="/main/about.action"><li>关于</li></a>
 					<a href="/case/case.action"><li>案例</li></a>
+					<a href="/main/model.action"><li>模版</li></a>
 					<a href="/main/advantage.action"><li>优势</li></a>
 					<a href="/main/team.action"><li>团队</li></a>
 					<a href="/main/employeePage.action"><li class="liSelected">招聘</li></a>

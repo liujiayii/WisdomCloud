@@ -221,6 +221,9 @@ public class FreemarkController {
         // 07、静态化联系我们页面
         staticPageService.indexStatic(map, "contactUs", "front/contactUs/contactUs");
         
+        // 09、静态化模版页面
+        staticPageService.indexStatic(map, "mould", "front/mould/mould");
+        
         // 06、静态化招聘页面
         List<Wanted> wantedList = wantedMapper.listWanted(0, 100);
         map.put("wantedList", wantedList);
