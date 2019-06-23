@@ -42,8 +42,8 @@ public class UpdateFile {
     private static final String picLocation = "data/attachments/";
     private static  String Key = "key";
     private static final String ruleId0 = "rule0";
-    private static final String matchPrefix0 = "A0/";
-    */
+    private static final String matchPrefix0 = "A0/";*/
+    
 	public UpdateFile() {
 		super();
 	}

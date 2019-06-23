@@ -313,7 +313,7 @@
     <div class="nav-content">
       <img src="${s2002}" class="logoimg"/>
       <ul class="nav-list">
-		<a href="index.html"><li>首页</li></a>
+  			<a href="index.html"><li>首页</li></a>
            <a href="about.html"><li>关于</li></a>
            <a href="case.html"><li>案例</li></a>
            <a href="mould.html"><li class="liSelected">模版</li></a>
@@ -321,14 +321,14 @@
            <a href="team.html"><li>团队</li></a>
            <a href="employeePage.html"><li>招聘</li></a>
            <a href="contactUs.html"><li>联系我们</li></a>
-	</ul>
+ 		</ul>
     </div>
   </div>
 </div>
 <div id="app" style="margin: 150px 0 100px">
   <div class="search">
     <div class="search-bar">
-      <input type="text" placeholder="输入您要搜索的编号或行业" v-model="search.modelName">
+      <input type="text" placeholder="输入关键词进行搜索" v-model="search.modelName">
       <button @click="getAllMould()">搜 索</button>
     </div>
     <div class="searchfind">
@@ -406,7 +406,7 @@
       <div class="no-record" v-if="slide.length===0"> =.= 抱歉，暂无数据</div>
       <el-carousel height="300px" v-else>
         <el-carousel-item v-for="item of slide" :key="item.id">
-          <img :src="item.images" alt="">
+          <img :src="item.images" alt="" style="width: 100%">
         </el-carousel-item>
       </el-carousel>
     </el-dialog>
@@ -418,6 +418,7 @@
 </div>
 <jsp:include page="../nav/footer.jsp"></jsp:include>
 <script type="text/javascript">
+  Vue.use(ELEMENT)
   let vm = new Vue({
     el: '#app',
     data: {

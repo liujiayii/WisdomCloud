@@ -13,6 +13,9 @@
 		<script type="text/javascript" src="../../../js/jquery1.11.3-jquery.min.js" ></script>
 		<script type="text/javascript" src="../../../js/layui/layui.js" ></script>
 		<script type="text/javascript" src="../../../js/inheritance.js" ></script>
+		<script src="//cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/element-ui@2/lib/index.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/element-ui@2/lib/theme-chalk/index.min.css">
 		<script type="text/javascript">
 			function formatDateTime(time){
 			    var date = new Date(time);
