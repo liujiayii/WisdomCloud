@@ -101,6 +101,7 @@ pageEncoding="UTF-8"%>
       cols: [
         cols
       ],
+      enabledCurrCookie: true,//开启table页码缓存，意思是开启刷新页面保留在当前页面
       id: 'testArea',
       skin: 'line',
       method: 'POST',
@@ -118,11 +119,26 @@ pageEncoding="UTF-8"%>
       },
       limit: 15, //每页默认显示的数量
       limits: [15, 30, 45],
-      done: function (res, curr, count) {
-        console.log(res);
-        $('thead tr').css({'background-color': '#73b1fe', 'color': '#fff'});
+      page: {
+    	    groups: 10 //只显示 1 个连续页码
+    	    ,layout: ['prev', 'page', 'next', 'count', 'skip'] //自定义分页布局
+    	    ,theme: '#1E9FFF'
+    	   
+    	},
+    	done: function (res, curr, count) {
+        	console.log(res);
+        	localStorage.setItem("data-page",curr);  //本地储存
+        	$('thead tr').css({'background-color': '#73b1fe', 'color': '#fff'});
       }
     });
+    
+    table.reload('#demo', {
+        page: {
+          curr: localStorage.getItem("data-page") //重新从第 n 页开始
+        }
+    });
+    
+       
     /*搜索*/
     $('#search').click(function () {
       table.reload('testArea', {
@@ -183,6 +199,10 @@ pageEncoding="UTF-8"%>
     window.parent.location.reload();
     parent.layer.close();
   }
+ 
+</script>
+<script type="text/javascript">
+
 </script>
 </body>
 </html>

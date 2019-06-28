@@ -104,6 +104,7 @@ public class FreemarkController {
                 if (img.getImageNumber()==2015) {map.put("s2015",img.getImgUrl());}
                                                  
                 
+                if (img.getImageNumber()==2016) {map.put("s2016",img.getImgUrl());}
                 if (img.getImageNumber()==2017) {map.put("s2017",img.getImgUrl());}
                 if (img.getImageNumber()==2018) {map.put("s2018",img.getImgUrl());}
                                                  
@@ -132,6 +133,15 @@ public class FreemarkController {
                 if (img.getImageNumber()==2037) {map.put("s2037",img.getImgUrl());}
                                                  
                 if (img.getImageNumber()==2038) {map.put("s2038",img.getImgUrl());}
+                
+                //员工风采添加三张图
+                if (img.getImageNumber()==2039) {map.put("s2039",img.getImgUrl());}
+                if (img.getImageNumber()==2040) {map.put("s2040",img.getImgUrl());}
+                if (img.getImageNumber()==2044) {map.put("s2044",img.getImgUrl());}
+                //办公环境添加三张图
+                if (img.getImageNumber()==2041) {map.put("s2041",img.getImgUrl());}
+                if (img.getImageNumber()==2042) {map.put("s2042",img.getImgUrl());}
+                if (img.getImageNumber()==2043) {map.put("s2043",img.getImgUrl());}
             }
         }
         

@@ -183,7 +183,7 @@
     where `id` = #{id,jdbcType=BIGINT}
   </update>
    <select id="listAll" resultMap="BaseResultMap">
-  	select <include refid="Base_Column_List"/> from `t_case` order by status ,time desc limit #{beginPageIndex},#{limit}
+  	select <include refid="Base_Column_List"/> from `t_case` WHERE status =0 order by status ,time desc limit #{beginPageIndex},#{limit}
   </select>
   
    <select id="listAllCount" resultType="java.lang.Integer">

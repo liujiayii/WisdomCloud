@@ -38,6 +38,7 @@ import freemarker.template.Template;
  * @author zhoujiaxin  
  * @createDate 2019年4月20日  
  */
+@Service
 public class StaticPageServiceImpl implements StaticPageService ,ServletContextAware{
     
     private ServletContext servletContext;

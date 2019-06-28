@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
         <meta content="${s1039}" name="Keywords">
@@ -25,7 +25,7 @@
             };
         </script>
     </head>
-<div class="navs navas">
+<div class="nav">
 	<div class="nav-content">
 		<img src="${s2002}" class="logoimg"/>
 		<ul class="nav-list">
@@ -55,7 +55,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="worth">
+	<div class="worth"  style="background: url(${s2016}) no-repeat center black;">
 		<h1>${s1030}</h1>
 		<span>
 			${s1031}<br />
@@ -65,14 +65,13 @@
 	<div class="dynamic">
 		<h3>企业动态</h3>
 		<h1>ENTERPRIS<u>E</u> DYNAMICS</h1>
-		<div class="dynamicArea">
-			
-		</div>
-		</div>
-	</div>
-	<div class="add">
-        <div class="addbut" onclick="addNews();"></div>
+		
+        </div>
+		<div class="add">
+        <div class="addbut" ></div>
     </div>
+	</div>
+	
 	<div class="footer" style="background: url(${s2017}) no-repeat center black;">
 		<div class="contactUs">
 			<div class="subtitle">
@@ -166,30 +165,41 @@
 	  	})
 	})
 			
-var page=1;
-   function addNews(){     
-       $.ajax({
-           url:"/news/listMovement.action",
-           data:{'page':page,'limit':6},
-           type:"POST",
-           dataType:"json",
-           async : false, //同步执行
-           success:function(result){
-               if(result.data.list.length<6){
-                   $(".addbut").css("display","none")
-               }
-               if(result.data.list.length>=0){        
-                   for(var i=0;i<result.data.list.length;i++){
-                       $(".dynamicArea").append("<a href='news"+result.data.list[i].id+".html' class=''><div class='dynamic-list'><img src='"+result.data.list[i].img_one+"'><div class='dtxt'><p>"+result.data.list[i].title+"</p><span>"+formatDateTime(result.data.list[i].time)+"</span></div>");
+       var page = 1;
+       /* 案例+*/
+       $(".addbut").click(function(){          
+           $.ajax({
+        	   url:"/news/listMovement.action",
+               data:{'page':page,'limit':'2'},
+               type:"POST",
+               dataType:"json",
+               async : false, //同步执行
+               success:function(result){
+                   console.log(result.data);
+                   if(result.data.list.length<result.data.count){
+                       $(".addbut").hide()
                    }
-               }
-           },
-           error: function(result) {
-               window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
-             }
-       }); 
-       page=page+1
-       }
+                   if(result){
+                       $(".caseArea").html("")
+                       for(var i=0;i<result.data.list.length;i++){
+                    	   $(".dynamic").append("<div class='dynamicArea'><a href='news"+result.data.list[i].id+".html' class=''><div class='dynamic-list'><img src='"+result.data.list[i].img_one+"'><div class='dtxt'><p>"+result.data.list[i].title+"</p><span>"+formatDateTime(result.data.list[i].time)+"</span></div></div>");
+                       }
+                   }
+
+                   page++
+               },
+               error: function(result) {
+                   window.wxc.xcConfirm("抱歉！出了一点小问题", window.wxc.xcConfirm.typeEnum.error);
+                 }
+           });
+       })
+   $(window).scroll(function(){
+       if($(document).scrollTop() > 630){
+            $('.nav').addClass('navs');
+         }else{
+              $('.nav').removeClass('navs')
+          }
+        })
    
 </script>
 	</body>

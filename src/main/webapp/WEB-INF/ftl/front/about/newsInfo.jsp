@@ -18,13 +18,13 @@
 			<div class="nav-content">
 				<img src="../../../img/font/nav.png" class="logoimg"/>
 				<ul class="nav-list">
-					<a href="/main/index.action"><li class="liSelected">首页</li></a>
-					<a href="/main/about.action"><li>关于</li></a>
-					<a href="/case/case.action"><li>案例</li></a>
-					<a href="/main/advantage.action"><li>优势</li></a>
-					<a href="/main/team.action"><li>团队</li></a>
-					<a href="/main/employeePage.action"><li>招聘</li></a>
-					<a href="/main/contactUs.action"><li>联系我们</li></a>
+					<a href="index.html"><li>首页</li></a>
+            <a href="about.html"><li class="liSelected">关于</li></a>
+            <a href="case.html"><li>案例</li></a>
+            <a href="advantage.html"><li>优势</li></a>
+            <a href="team.html"><li>团队</li></a>
+            <a href="employeePage.html"><li>招聘</li></a>
+            <a href="contactUs.html"><li>联系我们</li></a>
 				</ul>
 			</div>
 		</div>

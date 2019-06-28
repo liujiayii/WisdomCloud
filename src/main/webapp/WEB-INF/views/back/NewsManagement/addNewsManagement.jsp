@@ -135,7 +135,7 @@ pageEncoding="UTF-8"%>
         , 'help' //帮助
       ]
     });
-
+    layedit.getSelection(content);
     /*时间*/
     laydate.render({
       elem: '#startTime', //指定元素

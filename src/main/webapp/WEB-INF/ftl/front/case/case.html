@@ -130,7 +130,7 @@
 	  				if(result){
 	  					$(".caseArea").html("")
 	  					for(var i=0;i<result.data.list.length;i++){
-		  					$(".caseArea").append("<a href='https://"+result.data.list[i].url+"' target='_blank' class='caseHref'><div class='case-list'><div class='img-box'><img src='"+result.data.list[i].case_img+"' /><div class='tag'>"+result.data.list[i].type+"</div></div><div class='describe'><p>"+formatDateTime(result.data.list[i].time)+"</p><h3>"+result.data.list[i].name+"</h3><p>"+result.data.list[i].introduction+"<p></div></div></a>")
+		  					$(".caseArea").append("<a href='https://"+result.data.list[i].url+"' target='_blank' class='caseHref'><div class='case-list'><div class='img-box'><img src='"+result.data.list[i].case_img+"' /><div class='tag'>"+result.data.list[i].type+"</div></div><div class='describe'><p>"+formatDateTime(result.data.list[i].time)+"</p><h3>"+result.data.list[i].name+"</h3><p class='te'>"+result.data.list[i].introduction+"<p></div></div></a>")
 		  				}
 	  				}
 	  			},

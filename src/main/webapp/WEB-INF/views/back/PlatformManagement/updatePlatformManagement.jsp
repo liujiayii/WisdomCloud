@@ -131,6 +131,7 @@ pageEncoding="UTF-8"%>
         , 'help' //帮助
       ]
     });
+    layedit.getText(index);//取纯文本值
 
     //富文本编译器
     var indexs = layedit.build('ourTeam', {
@@ -153,6 +154,7 @@ pageEncoding="UTF-8"%>
       ]
     });
 
+    layedit.getText(indexs);//取纯文本值
 
     //普通图片上传
     var uploadInst = upload.render({
@@ -185,7 +187,7 @@ pageEncoding="UTF-8"%>
         });
       }
     });
-
+    
     //自定义验证规则
     form.verify({
       content: function (value) {
