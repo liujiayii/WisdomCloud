@@ -472,3 +472,17 @@ form .form-box{
     padding: 0 25px;
     text-align: center;
 }
+.carousel{
+    width: 1202px;
+    margin: 10px auto;
+    text-align: center;
+    padding: 30px 10px;
+    box-sizing: border-box;
+}
+.carousel h2{
+	font-size: 48px;
+}
+.carousel p{
+	font-size: 24px;
+    color: #000000;
+}

@@ -35,7 +35,7 @@ public class UpdateFile {
 	private static final String matchPrefix0 = "A0/";
     
     /** 测试环境 */
-   /* private static final String endpoint = "http://oss-cn-zhangjiakou.aliyuncs.com";
+	/*private static final String endpoint = "http://oss-cn-zhangjiakou.aliyuncs.com";
     private static final String accessKeyId = "LTAILXMrV4PXgX4z";
     private static final String accessKeySecret = "h38zzq6DgpukdxmyTWsrWwaRaTp9v9";
     private static final String bucketName = "ouyepuhui";

@@ -16,9 +16,10 @@
 		<script type="text/javascript" src="../../../js/inheritance.js" ></script>
 		<script type="text/javascript" src="../../../js/layui/layui.js" ></script>
 		<script src="../../../dist/js/swiper.min.js"></script>
-		 <link rel="stylesheet" type="text/css" href="../../../css/normalize.css" />
-         <link rel="stylesheet" type="text/css" href="../../../css/demo.css">
+		 <!--  <link rel="stylesheet" type="text/css" href="../../../css/normalize.css" />
+         <link rel="stylesheet" type="text/css" href="../../../css/demo.css">-->
          <link rel="stylesheet" href="../../../css/style.css">
+         <script src="../../../dist/js/swiper.min.js"></script>
 		
 		<style type="text/css">
 			.swiper-slide {
@@ -39,7 +40,7 @@
 			   width: 479px;
 			    height: 346px;
 			    float: left;
-			    margin-left: 110px;
+			    
 		    }
 		    .sw-slide{
 		    display: -webkit-box;
@@ -141,70 +142,42 @@
 			<div class="recruitSwiper">
 				<h2>JOIN THE ELECTRICITY SOUL</h2>
 				<p><b>员工风采</b></p>
-				<!--<div class="swiper-container swipDoms">
+				<div class="swiper-container swipDoms">
 			        <div class="swiper-wrapper swipDoms-Area">
 			            <div class="swiper-slide"><img alt="员工风采" src="${s2028}"></div>
 			            <div class="sw-slide"><img alt="员工风采" src="${s2029}"></div>
-			            <!--<div class="swiper-slide"><img alt="员工风采" src="${s2030}"></div>
+			            <div class="swiper-slide"><img alt="员工风采" src="${s2030}"></div>
 			            <div class="swiper-slide"><img alt="员工风采" src="${s2031}"></div>
-			            <div class="swiper-slide"><img alt="员工风采" src="${s2032}"></div>-->
+			            <div class="swiper-slide"><img alt="员工风采" src="${s2032}"></div>
 			        </div>
 			        <!-- Add Pagination -->
-			        <!--<div class="swiper-pagination"></div>
+			       <div class="swiper-pagination" id="paf"></div>
 			        <!-- Add Arrows -->
-			        <!--  <div class="swiper-button-next"></div>
-			        <div class="swiper-button-prev"></div>
+			        <div class="swiper-button-next bn"></div>
+			        <div class="swiper-button-prev bn" ></div>
 			    </div>
-			</div>-->
-			 <div class="htmleaf-container">
-			    <div style="text-align:center;clear:both">
-			        <script src="../../../js/gg_bd_ad_720x90.js" type="text/javascript"></script>
-			        <script src="../../../js/follow.js" type="text/javascript"></script>
-			    </div>
-				<div class="carousel" data-gap="20" data-bfc>
-				    <figure>
-				        <img alt="员工风采" src="${s2028}">
-                        <img alt="员工风采" src="${s2029}">
-                        <img alt="员工风采" src="${s2030}">
-                        <img alt="员工风采" src="${s2031}">
-                        <img alt="员工风采" src="${s2032}">
-                        <img alt="员工风采" src="${s2039}">
-                        <img alt="员工风采" src="${s2040}">
-                        <img alt="员工风采" src="${s2044}">
-				    </figure>
-				    <nav>
-				         <button class="nav prev" id="cd"></button>
-				        <img class="ed" src=".../../../img/font/3333.png"/>
-				       <button class="nav next" id="dd"> </button>
-				        <img class="fd" src=".../../../img/font/123154.png"/>
-				    </nav>
-				</div>
-			
-			<div class="htmleaf-container">
-			    <div style="text-align:center;clear:both">
-			        <script src="../../../js/gg_bd_ad_720x90.js" type="text/javascript"></script>
-			        <script src="../../../js/follow.js" type="text/javascript"></script>
-			    </div>
+			</div>
+			 
 
             <div class="carousel" data-gap="20" data-bfc>
                   <h2>JOIN THE ELECTRICITY SOUL</h2>
                 <p><b>办公环境</b></p>
-			    <figure>
-			        <img alt="办公环境" src="${s2033}">
-                    <img alt="办公环境" src="${s2034}">
-                    <img alt="办公环境" src="${s2035}">
-                    <img alt="办公环境" src="${s2036}">
-                    <img alt="办公环境" src="${s2037}">
-                    <img alt="办公环境" src="${s2041}">
-                    <img alt="办公环境" src="${s2042}">
-                    <img alt="办公环境" src="${s2043}">
-			    </figure>
-			    <nav>
-			        <button class="nav prev " id="ad" > </button>
-			        <img class="gd" src=".../../../img/font/3333.png">
-			        <button class="nav next " id="bd"></button>
-			        <img class="hd" src=".../../../img/font/123154.png">
-			    </nav>
+                <div class="swiper-container swipDoms">
+			        <div class="swiper-wrapper swipDoms-Area">
+			            <div class="swiper-slide"><img alt="员工风采" src="${s2028}"></div>
+			            <div class="sw-slide"><img alt="员工风采" src="${s2029}"></div>
+			            <div class="swiper-slide"><img alt="员工风采" src="${s2030}"></div>
+			            <div class="swiper-slide"><img alt="员工风采" src="${s2031}"></div>
+			            <div class="swiper-slide"><img alt="员工风采" src="${s2032}"></div>
+			        </div>
+			        <!-- Add Pagination -->
+			       <div class="swiper-pagination" id="paf1"></div>
+			        <!-- Add Arrows -->
+			        <div class="swiper-button-next pa" ></div>
+			        <div class="swiper-button-prev pa" ></div>
+			    </div>
+			</div>
+			    
 			</div>
         </div>
 			<div class="tabAreas">
@@ -339,20 +312,20 @@
         }
     });
 
-    function carousel(root) {
-        var figure = root.querySelector('figure'),
-            nav = root.querySelector('nav'),
-            images = figure.children,
-            n = images.length,
-            gap = root.dataset.gap || 0,
-            bfc = 'bfc' in root.dataset,
-            theta = 2 * Math.PI / n,
-            currImage = 0;
+    //function carousel(root) {
+     //   var figure = root.querySelector('figure'),
+         //   nav = root.querySelector('nav'),
+         //   images = figure.children,
+          //  n = images.length,
+           // gap = root.dataset.gap || 0,
+           // bfc = 'bfc' in root.dataset,
+           // theta = 2 * Math.PI / n,
+            //currImage = 0;
 
-        setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
-        window.addEventListener('resize', function () {
-            setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
-        });
+       // setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
+        //window.addEventListener('resize', function () {
+        //    setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
+       // });
 
         setupNavigation();
 

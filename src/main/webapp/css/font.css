@@ -125,7 +125,7 @@
 }
 .divs>p{
 	font-size: 16px;
-    text-indent: 40px;
+    text-indent: 30px;
 }
 /*.orange{
 	color: orange;
@@ -240,7 +240,7 @@
 .ourTeam p{
 	line-height: 30px;
 	text-align: left;
-	text-indent: 30px;
+	text-indent: 28px;
 }
 .jobDes{
 	width: 1200px;
@@ -334,9 +334,10 @@
     display:block;
     word-break: break-all;
     word-wrap: break-word;
+    text-indent: 31px;
+    font-size: 16px !important;
 }
 .central .container>p{
-	    text-indent: 32px;
     text-aline: 30px;
     line-height: 30px;
     font-size: 16px;
@@ -379,4 +380,7 @@
     border-radius: 5px;
     color: #fff;
     background: #1773e8;
+}
+.fh{
+	margin-top: -90px;
 }
