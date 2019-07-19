@@ -3,6 +3,7 @@ package com.yqwl.common.utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -85,7 +86,11 @@ public class UpdateFile {
 			String fileType = originalFilename.substring(originalFilename.lastIndexOf(".")).replace(".", "");
 			Key = picLocation + UUID.randomUUID().toString().toUpperCase().replace("-", "") + "." + fileType;
 			// 设置URL过期时间为10年。
-			Date expiration = new Date(new Date().getTime() + 3600 * 1000 * 24 * 30 * 12 * 10);
+			Date date = new Date();
+		    Calendar cal = Calendar.getInstance();
+		    cal.setTime(date);//设置起时间
+		    cal.add(Calendar.YEAR, 1*10);//增加十年
+			Date expiration = cal.getTime();
 			// 生成以GET方法访问的签名URL，访客可以直接通过浏览器访问相关内容。
 			// 上传文件到阿里云
 			ossClient.putObject(bucketName, Key, is);
