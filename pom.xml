@@ -217,7 +217,7 @@
 		<dependency>
 			<groupId>com.aliyun.oss</groupId>
 			<artifactId>aliyun-sdk-oss</artifactId>
-			<version>3.10.0</version>
+			<version>3.10.1</version>
 		</dependency> 
 		<!-- jsp伪静态化 -->
 		<dependency>
